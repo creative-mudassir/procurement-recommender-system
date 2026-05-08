@@ -1,0 +1,17 @@
+{
+  "name": "tender-supplier-evaluation-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Single-user web app to evaluate supplier proposals against a tender contract using TED data and Gemini AI.",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix apps/api && npm install --prefix apps/web",
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "npm run dev --prefix apps/api",
+    "dev:web": "npm run dev --prefix apps/web",
+    "build": "npm run build --prefix apps/api && npm run build --prefix apps/web",
+    "test": "npm run test --prefix apps/api"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
